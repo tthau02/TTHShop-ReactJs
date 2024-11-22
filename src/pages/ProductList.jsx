@@ -19,16 +19,22 @@ const ProductList = () => {
         <table class="min-w-full text-left">
           <thead class="bg-gray-200">
             <tr>
-              <th class="py-3 px-4">User</th>
-              <th class="py-3 px-4">Email</th>
-              <th class="py-3 px-4">Role</th>
+              <th class="py-3 px-4">ID</th>
+              <th class="py-3 px-4">Product Name</th>
+              <th class="py-3 px-4">Price</th>
+              <th class="py-3 px-4">Image</th>
+              <th class="py-3 px-4">Description</th>
               <th class="py-3 px-4">Actions</th>
             </tr>
           </thead>
           <tbody>
             <tr class="border-t">
-              <td class="py-3 px-4">John Doe</td>
-              <td class="py-3 px-4">john@example.com</td>
+              <td class="py-3 px-4">1</td>
+              <td class="py-3 px-4">iphone 15 promax</td>
+              <td class="py-3 px-4">23.000.000đ</td>
+              <td class="py-3 px-4 w-[150px] h-[150px]">
+                  <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-15-pro-max_3.png" alt="" />
+              </td>
               <td class="py-3 px-4">Admin</td>
               <td class="py-3 px-4">
                 <button class="text-blue-500">Edit</button>
