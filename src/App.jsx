@@ -6,24 +6,30 @@ import ProductsPage from "./pages/ProductsPage";
 import SalePages from "./pages/Sale";
 import ContactPages from "./pages/Contact";
 import LayoutAdmin from "./layout/LayoutAdmin";
-import HomeAdmin from "./pages/HomeAdmin";
-import ProductList from "./pages/ProductList";
-import ProductAdd from "./pages/ProductAdd";
+import Dashboard from "./pages/admin/Dashboard";
+import ProductList from "./pages/admin/ProductList";
+import ProductAdd from "./pages/admin/ProductAdd";
+import ProductEdit from "./pages/admin/ProductEdit";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
   
 function App (){
   return (
     <>
       <Routes>
+      <Route path="Signin" element={<Signin />} />
+      <Route path="Signup" element={<Signup />} />
         <Route path="/" element={<MainLayout />}>
-          <Route path="/" element={<HomePage />} /> 
+          <Route index element={<HomePage />} /> 
           <Route path="product" element={<ProductsPage />} />
           <Route path="sale" element={<SalePages />} />
           <Route path="contact" element={<ContactPages />} />
         </Route>
         <Route path="/admin" element={<LayoutAdmin />}>
-            <Route path="/admin" element={<HomeAdmin />} />
-            <Route path="/admin/productlist" element={<ProductList />} />
-            <Route path="/admin/productlist/add" element={<ProductAdd />} />
+            <Route index element={<Dashboard />} />
+            <Route path="products" element={<ProductList />} />
+            <Route path="products/add" element={<ProductAdd />} />
+            <Route path="products/:id/edit" element={<ProductEdit />} />
         </Route>
       </Routes>
     </>

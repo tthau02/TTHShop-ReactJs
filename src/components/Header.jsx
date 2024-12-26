@@ -15,9 +15,13 @@ const Header = () => {
                 <NavLink to="/sale" className='text-white hover:text-red-300'>Khuyến Mãi</NavLink>
                 <NavLink to="/contact" className='text-white hover:text-red-300'>Liên Hệ</NavLink>
             </nav>
-            <div className='flex justify-center items-center space-x-3'>
-                <input type="text" placeholder='Search' className='p-2 text-[14px] rounded-lg'/>
-                <button className='p-2 text-white bg-red-500 text-[14px] rounded-lg hover:bg-red-300'>Search</button>
+            <div className='flex justify-center items-center'>
+                <input type="text" placeholder='Search' className='p-2 text-[14px] rounded-s-lg'/>
+                <button className='p-2 me-6 rounded-e-lg text-white bg-red-500 text-[14px] hover:bg-red-300'>Search</button>
+                <div className='flex bg-red-600 rounded-lg'>
+                    <Link to="/Signin"><button className='text-white p-2 hover:bg-red-400 rounded-s-lg'>Đăng Nhập</button></Link>
+                    <Link to="/Signup"><button className='text-white p-2 hover:bg-red-400 rounded-e-lg'>Đăng Ký</button></Link>
+                </div>
             </div>
         </div>
     </div>

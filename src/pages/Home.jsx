@@ -1,6 +1,15 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 const HomePage = () => {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        const getALL = async () => {
+            const response = await axios.get(`http://localhost:3000/products`);
+            setProducts(response.data)
+        }
+        getALL();
+    }, [])
   return (
     <div className="container max-w-[1300px] mx-auto m-5">
         {/* category */}
@@ -74,69 +83,26 @@ const HomePage = () => {
 
         <h3 className='p-3 uppercase font-bold text-[16px] text-red-600'>sản phẩm mới nhất</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
-            <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out transform hover:scale-105">
-                <img class="w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Product Image" />
+        {products.map((item, index) => {
+            return (
+                <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out transform hover:scale-105">
+                <img class="w-full h-38 object-cover" src={item.imageURL} alt="Product Image" />
                 <div class="p-4">
-                    <h2 class="text-xl font-semibold text-gray-800">Product Name 1</h2>
+                    <h2 class="text-xl font-semibold text-gray-800">{item.name}</h2>
                     <p class="mt-2 text-gray-600 text-sm">
-                        This is a brief description of the product.
+                        {item.description}
                     </p>
                     <div class="flex items-center justify-between mt-4">
-                        <span class="text-lg font-bold text-red-500">$99.99</span>
+                        <span class="text-lg font-bold text-red-500">{item.price}</span>
                         <button class="px-3 py-2 bg-red-500 text-white text-xs font-bold uppercase rounded hover:bg-red-400">
                             Add to Cart
                         </button>
                     </div>
                 </div>
             </div>
+            )
+        })}
             
-            <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out transform hover:scale-105">
-                <img class="w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Product Image" />
-                <div class="p-4">
-                    <h2 class="text-xl font-semibold text-gray-800">Product Name 2</h2>
-                    <p class="mt-2 text-gray-600 text-sm">
-                        This is a brief description of the product.
-                    </p>
-                    <div class="flex items-center justify-between mt-4">
-                        <span class="text-lg font-bold text-red-500">$99.99</span>
-                        <button class="px-3 py-2 bg-red-500 text-white text-xs font-bold uppercase rounded hover:bg-red-400">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out transform hover:scale-105">
-                <img class="w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Product Image" />
-                <div class="p-4">
-                    <h2 class="text-xl font-semibold text-gray-800">Product Name 3</h2>
-                    <p class="mt-2 text-gray-600 text-sm">
-                        This is a brief description of the product.
-                    </p>
-                    <div class="flex items-center justify-between mt-4">
-                        <span class="text-lg font-bold text-red-500">$99.99</span>
-                        <button class="px-3 py-2 bg-red-500 text-white text-xs font-bold uppercase rounded hover:bg-red-400">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out transform hover:scale-105">
-                <img class="w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Product Image" />
-                <div class="p-4">
-                    <h2 class="text-xl font-semibold text-gray-800">Product Name 4</h2>
-                    <p class="mt-2 text-gray-600 text-sm">
-                        This is a brief description of the product.
-                    </p>
-                    <div class="flex items-center justify-between mt-4">
-                        <span class="text-lg font-bold text-red-500">$99.99</span>
-                        <button class="px-3 py-2 bg-red-500 text-white text-xs font-bold uppercase rounded hover:bg-red-400">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
         </div>
 
     </div>

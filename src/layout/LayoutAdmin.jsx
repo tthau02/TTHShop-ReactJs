@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 
 const LayoutAdmin = () => {
   return (
@@ -12,7 +12,7 @@ const LayoutAdmin = () => {
     <nav class="mt-5 flex-grow">
       <Link to="/admin" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Dashboard</Link>
       <Link to="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Users</Link>
-      <Link to="/admin/productlist" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Products</Link>
+      <Link to="products" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Products</Link>
       <Link to="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Orders</Link>
       <Link to="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">Settings</Link>
     </nav>

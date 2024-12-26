@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "name": "phone 12 pro max",
+      "price": "13000000",
+      "imageURL": "https://clickbuy.com.vn/uploads/pro/iphone-13-pro-max-128gb-cu-dep-99-khong-zin-tang-may-lg-157742.png",
+      "inStock": true,
+      "description": "iphone cuc dep",
+      "id": "-LfMKcf"
+    },
+    {
+      "name": "phone 13 pro max",
+      "price": "12222",
+      "imageURL": "https://onewaymobile.vn/images/products/2021/09/23/original/iphone-13-pro-max-_-onewaymobile_1632386599-copy-copy.png",
+      "inStock": false,
+      "description": "",
+      "id": "Lf480pj"
+    }
+  ],
+  "users": [
+    {
+      "email": "tranhau@gmail.com",
+      "password": "$2a$10$nkTGVF/E.IydVNEBg4KURe3nH3vUDnIzCinhoi0LY.bsSyfNyQ1h2",
+      "username": "tranhau",
+      "confirmPassword": "123456",
+      "id": 1
+    }
+  ]
+}
